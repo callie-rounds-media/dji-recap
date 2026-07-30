@@ -148,11 +148,8 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow uppercase text-dji text-xs font-bold mb-3 reveal">The range</p>
     <h2 class="font-head font-extrabold text-3xl md:text-5xl tracking-tight max-w-3xl reveal">Two continents, six completely different worlds.</h2>
-    <p class="mt-6 text-base md:text-lg text-mute max-w-2xl reveal">no two of these look the same, and that was the point. every video got its own landscape and its own stunt :)</p>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 mt-16" id="rangeGrid"></div>
-
-    <p class="mt-16 text-xl md:text-2xl max-w-3xl leading-relaxed reveal">skydiving, hot air balloons, helicopters, para trikes, motorbikes and sand dunes. six videos, no repeats.</p>
+    <p class="mt-10 text-xl md:text-2xl max-w-4xl leading-relaxed reveal">these campaigns were shot across the dunes of africa, motorbiking chapman's peak, above the clouds over brazil, para trike jumping out over the ocean, sunrise skydiving out of a hot air balloon, and off the skids of a helicopter over the jungle.</p>
   </div>
 </section>
 
@@ -166,25 +163,6 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- THE GROWTH -->
-<section id="growth" class="py-24 md:py-32 border-b border-line">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-    <div class="reveal">
-      <p class="eyebrow uppercase text-dji text-xs font-bold mb-3">Since we started</p>
-      <div class="font-head font-extrabold text-6xl md:text-8xl tracking-tight text-dji">3x</div>
-      <p class="mt-4 font-head font-semibold text-lg">the following i had when we met</p>
-    </div>
-    <div class="reveal">
-      <p class="text-base md:text-lg text-mute leading-relaxed">
-        since we started this partnership i've 3x'd my following. over 300,000 new followers have come in, and i'm sitting at nearly half a million now, still growing.
-      </p>
-      <p class="mt-5 text-base md:text-lg text-mute leading-relaxed">
-        so every video we make from here lands on a bigger audience than the one before it did.
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- WHAT'S NEXT -->
 <section id="next" class="py-24 md:py-32">
   <div class="max-w-6xl mx-auto px-6">
@@ -194,6 +172,9 @@ tailwind.config = {
     <div class="mt-10 grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
       <div class="reveal">
         <p class="text-base md:text-lg text-mute leading-relaxed">
+          since we started this partnership i've <span class="text-ink font-semibold">3x'd my following</span>. over 300,000 new followers have come in, and i'm sitting at <span class="text-ink font-semibold">nearly half a million</span> now, still growing. so every video we make from here lands on a bigger audience than the one before it did.
+        </p>
+        <p class="mt-5 text-base md:text-lg text-mute leading-relaxed">
           i'm moving most of my partnerships into retainers this year. it keeps relationships long term instead of one-off. it stops my feed getting oversaturated with brand deals, and it protects how well your content performs when it does go out.
         </p>
         <p class="mt-5 text-base md:text-lg text-mute leading-relaxed">
@@ -235,15 +216,6 @@ tailwind.config = {
    All view figures verified from Instagram Reel insights.
    ============================================================ */
 const RECAP = {
-  range: [
-    { place: "The dunes of Africa",  stunt: "riding out across the sand",          product: "Osmo Nano" },
-    { place: "Chapman's Peak",       stunt: "motorbiking the coast road",           product: "Osmo Nano" },
-    { place: "Above the clouds",     stunt: "freefall over Brazil",                 product: "Osmo Nano" },
-    { place: "Over the ocean",       stunt: "para trike at sunset in Brazil",       product: "Osmo 360"  },
-    { place: "Sunrise at altitude",  stunt: "skydiving out of a hot air balloon",   product: "Osmo 360"  },
-    { place: "Over the jungle",      stunt: "jumping off the skids of a helicopter",product: "Osmo 360"  },
-  ],
-
   films: [
     { title: "Dunes",            product: "Osmo Nano", views: 1700984, reach: 1568018, follows: 954,   url: "https://www.instagram.com/reel/DWip4RugQOh/", media: "cover-01.jpg" },
     { title: "Motorbike",        product: "Osmo Nano", views: 1629686, reach: 1298353, follows: 1886,  url: "https://www.instagram.com/reel/DW9r57DEdpt/", media: "cover-02.jpg" },
@@ -256,17 +228,6 @@ const RECAP = {
 
 const fmt = n => n.toLocaleString("en-US");
 const short = n => n >= 1e6 ? (n/1e6).toFixed(2).replace(/\.?0+$/,"") + "M" : (n/1e3).toFixed(0) + "K";
-
-/* ---- the range ---- */
-document.getElementById("rangeGrid").innerHTML = RECAP.range.map((r, i) => `
-  <div class="reveal border-t border-line pt-6">
-    <div class="flex items-baseline justify-between gap-4">
-      <span class="font-head font-bold text-sm text-dji tnum">0${i+1}</span>
-      <span class="eyebrow uppercase text-[10px] font-semibold text-mute">${r.product}</span>
-    </div>
-    <h3 class="font-head font-extrabold text-xl md:text-2xl tracking-tight mt-4">${r.place}</h3>
-    <p class="mt-2 text-sm text-mute leading-relaxed">${r.stunt}</p>
-  </div>`).join("");
 
 /* ---- film tiles ---- */
 function filmHTML(f){
